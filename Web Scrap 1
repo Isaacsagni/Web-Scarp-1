@@ -1,0 +1,9 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+# Send a GET request
+url = "https://www.scrapethissite.com/pages/forms/"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')  # fixed parser
+print(soup)
