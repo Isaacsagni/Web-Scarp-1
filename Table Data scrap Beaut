@@ -1,0 +1,24 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+from IPython.display import display  # For Jupyter notebook display
+
+url = "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Find the first table on the page
+table1 = soup.find('table')
+
+# Convert to DataFrame
+df1 = pd.read_html(str(table1))[0]
+
+# Clean column headers if needed
+df1.columns = [col.strip() for col in df1.columns]
+
+# Display with styling in Jupyter
+display(df1.style.set_table_styles([
+    {'selector': 'th', 'props': [('background-color', '#4CAF50'), ('color', 'white')]},
+    {'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f2f2f2')]},
+    {'selector': 'tr:hover', 'props': [('background-color', '#ddd')]}
+]).set_properties(**{'text-align': 'left'}))
