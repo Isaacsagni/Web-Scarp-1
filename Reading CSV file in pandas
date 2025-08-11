@@ -5,3 +5,22 @@ file_path = r"C:\Users\HP\Downloads\countries of the world.csv"
 
 # Read CSV
 df = pd.read_csv(file_path)
+
+
+
+
+
+
+Another separate 
+import pandas as pd
+from IPython.display import display
+
+pd.set_option('display.max_rows', None)       # Show all rows
+pd.set_option('display.max_columns', None)    # Show all columns
+pd.set_option('display.float_format', '{:.0f}'.format)  # Disable scientific notation
+
+file_path = r"C:\Users\HP\Downloads\world_population.csv"
+
+df = pd.read_csv(file_path)
+
+display(df)
