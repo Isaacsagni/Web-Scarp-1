@@ -1,0 +1,2 @@
+df2.to_csv(r"C:\Users\HP\Desktop\table2_largest_companies.csv", index=False)
+print("CSV file saved to your Desktop.")
