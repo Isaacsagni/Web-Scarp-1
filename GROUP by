@@ -1,2 +1,15 @@
 grouped = df.groupby('Base Flavor')
 print(grouped)
+
+
+
+
+
+
+Another to find mean after groupped. 
+import pandas as pd
+
+pd.set_option('display.float_format', '{:.2f}'.format)  # show 6 decimals without scientific notation
+
+mean_ratings = df.groupby('Base Flavor')[['Flavor Rating', 'Texture Rating', 'Total Rating']].mean().reset_index()
+print(mean_ratings)
