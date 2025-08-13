@@ -1,0 +1,30 @@
+#TABLE  1
+import pandas as pd
+from IPython.display import display
+
+file_path = r"C:\Users\HP\Downloads\LOTR 2.csv"
+
+# Read CSV
+df2 = pd.read_csv(file_path)
+display(df2)
+
+
+#TABLE  2  
+import pandas as pd
+from IPython.display import display
+
+file_path = r"C:\Users\HP\Downloads\LOTR.csv"
+
+# Read CSV
+df1 = pd.read_csv(file_path)
+display(df1)
+
+
+
+merged_df = pd.merge(df1, df2, on='FellowshipID', how='inner')
+display(merged_df)
+
+
+
+When joining two tables, you match them on a common key e.g FellowshipID 
+we used above — often the primary key in one table and a foreign key in another.
