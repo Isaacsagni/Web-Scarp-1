@@ -1,0 +1,34 @@
+#Table    1
+import pandas as pd
+from IPython.display import display
+
+file_path = r"C:\Users\HP\Downloads\LOTR.csv"
+
+# Read CSV
+df1 = pd.read_csv(file_path)
+display(df1)
+
+#Table   2
+import pandas as pd
+from IPython.display import display
+
+file_path = r"C:\Users\HP\Downloads\LOTR 2.csv"
+
+# Read CSV
+df2 = pd.read_csv(file_path)
+display(df2)
+
+# INNER JOIN
+merged_df = pd.merge(df1, df2, on='FellowshipID', how='inner')
+display(merged_df)
+
+OUTER JOIN
+merged_df = pd.merge(df1, df2, on='FellowshipID', how='outer')
+display(merged_df)
+
+# LEFT JOIN
+merged_df = pd.merge(df1, df2, on='FellowshipID', how='left')
+display(merged_df)
+
+merged_df = pd.merge(df1, df2, on='FellowshipID', how='right')
+display(merged_df)
