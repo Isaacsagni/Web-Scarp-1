@@ -1,2 +1,12 @@
 df2.to_csv(r"C:\Users\HP\Desktop\table2_largest_companies.csv", index=False)
 print("CSV file saved to your Desktop.")
+
+
+
+
+Method 2
+
+file_path = r"C:\Users\HP\OneDrive\Desktop\cleaned_data.xlsx"    #specify where to save
+
+# Save DataFrame to Excel
+df.to_excel(file_path, index=False)
