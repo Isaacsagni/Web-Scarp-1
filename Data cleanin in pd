@@ -1,0 +1,20 @@
+df.drop_duplicates()            #drop duplicates
+
+df = df.drop_duplicates()
+df                              #Saves dataframe after dropping duplicates
+
+
+
+
+
+# Drop a single column (creates a new DataFrame)
+df = df.drop(columns="ColumnName")
+df
+
+# Drop multiple columns
+df = df.drop(columns=["Col1", "Col2"])
+df
+
+# Drop in place (modifies df directly)
+df.drop(columns="ColumnName", inplace=True)
+df
