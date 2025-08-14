@@ -32,4 +32,18 @@ df
 df["ColumnName"] = df["ColumnName"].str.replace("_", "", regex=False)
 
 # Remove multiple specific marks
-df["Name"] = df["Name"].str.replace(r'[_\-\.!\?]', '', regex=True)
+df["Name"] = df["Name"].str.replace(r'[_\d\W]', '', regex=True)
+
+How it works
+
+[_\d\W] means:
+
+_ → underscore
+
+\d → any digit (0–9)
+
+\W → any non-word character (this already removes most punctuation)
+
+Putting them inside [] means “match any one of these characters.”
+
+regex=True tells pandas it’s a regex pattern.
