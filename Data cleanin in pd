@@ -18,3 +18,18 @@ df
 # Drop in place (modifies df directly)
 df.drop(columns="ColumnName", inplace=True)
 df
+
+
+#removing punctuation marks in pandas-anything that is NOT a letter, number, underscore, or whitespace
+df["ColumnName"] = df["ColumnName"].str.replace(r'[^\w\s]', '', regex=True)
+df
+
+
+
+
+#specific punctuation mark like underscore-you can just target that character directly.
+# Remove underscores
+df["ColumnName"] = df["ColumnName"].str.replace("_", "", regex=False)
+
+# Remove multiple specific marks
+df["Name"] = df["Name"].str.replace(r'[_\-\.!\?]', '', regex=True)
