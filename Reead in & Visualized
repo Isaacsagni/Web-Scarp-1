@@ -1,0 +1,13 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+file_path = r"C:\Users\HP\Downloads\Excel D.xlsx"
+
+# Read Excel
+df = pd.read_excel(file_path)
+sns.countplot(data=df, x="Gender", hue="Purchased Bike")
+plt.title("Bike Purchases by Gender")
+plt.show()
+
+
